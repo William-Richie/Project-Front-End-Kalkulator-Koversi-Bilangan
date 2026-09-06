@@ -1,12 +1,135 @@
 header{
-    padding: 5rem;
-    color: white;
+    padding: 70px;
+    color: #c4c9d5;
     text-align:center;
-    background-color: rgb(240, 125, 125);
+    background-color: #191d23;
     margin: auto;
     font-family: serif;
 }
 
+header h1{
+    margin-bottom: 0px;
+    margin-top: 6px;
+    font-size: 40px;
+}
+
+header h2{
+    margin-top: 0px;
+    font-size: 16px;
+    font-style: italic;
+}
+
+nav button{
+    background-color: #9dafbb;
+    color: #191d23;
+    padding: 3px 15px;
+    font-weight: bold;
+    margin-top: 16px;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #8395a2;
+    font-family: monospace;
+}
+
+nav button:hover {
+    background-color: #8395a2;
+    transform: scale(0.9);
+    }
+
+nav button.aktif {
+    background-color: #8395a2;
+}
+
 body {
     font-family: monospace;
+    background: linear-gradient(to bottom, #90a2af, #b5bbc8, #d6c4d6, #eceaea);
+    color: #2a3441;
+    min-height: 700px;
+}
+
+#beranda {
+    max-width: 900px;
+    margin: 36px auto 0px;
+    border-radius: 8px;
+}
+
+.kotak1 {
+    text-align: center;
+    padding: 24px;
+    margin-bottom: 32px;
+    border-radius: 8px;
+    background-color: #eeeeee17;
+    box-shadow: 0 4px 10px #191d234d;
+}
+
+.flexbox {
+    display: flex;
+    gap: 32px;
+}
+
+#visualisasi {
+    max-width: 650px;
+    margin: 36px auto 36px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px #191d234d;
+    text-align: center;
+}
+
+#visual-input {
+    background-color: #dedcdc;
+    color: #191d23;
+    text-align: center;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #191d23;
+    font-family: monospace;
+    width: 160px;
+    padding: 8px;
+}
+
+#bit-boxes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px #191d234d;
+}
+
+.bit-box {
+    height: 35px;
+    display: flex;
+    color: #2a3441;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+#cara-kerja {
+    max-width: 300px;
+    padding: 20px;
+    border-radius: 6px;
+    font-size: 17px;
+    box-shadow: 0 4px 10px #191d234d;
+}
+
+.step-row {
+    margin-bottom: 16px;
+}
+
+.step-row:last-child {
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+.flexbox2 {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    margin-top: 2rem;
 }
