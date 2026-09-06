@@ -8,6 +8,11 @@ semuaHalaman.forEach(function(halaman) {
 
 document.getElementById("beranda").style.display = "block";
 
+const tombolAwal = document.querySelector('[data-target="beranda"]');
+if (tombolAwal) {
+    tombolAwal.classList.add("aktif");
+}
+
 tombolNavigasi.forEach(function(tombol) {
     tombol.addEventListener("click", function() {
         const target = tombol.dataset.target;
@@ -17,6 +22,12 @@ tombolNavigasi.forEach(function(tombol) {
         });
 
         document.getElementById(target).style.display = "block";
+
+        tombolNavigasi.forEach(function(btn) {
+            btn.classList.remove("aktif");
+        });
+
+        tombol.classList.add("aktif");
     });
 });
 
