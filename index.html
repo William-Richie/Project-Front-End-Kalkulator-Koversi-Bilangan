@@ -1,34 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">c
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalkulator Konversi Bilangan</title>
 </head>
+
 <body>
-    <div class="div">
+    <header>
         <h1>Kalkulator Konversi Bilangan</h1>
-    </div>  
-    <div>
-        <form action="">
-            <input id="biner" type="radio" name="sistem_bilangan" value="biner" checked="checked">
-            <label for="biner">Biner</label>
-            <input id="oktal" type="radio" name="sistem_bilangan" value="oktal">
-            <label for="oktal">Oktal</label>
-            <input id="desimal" type="radio" name="sistem_bilangan" value="desimal">
-            <label for="desimal">Desimal</label>
-            <input id="heksadesimal" type="radio" name="sistem_bilangan" value="heksadesimal">
-            <label for="heksadesimal">Heksa Desimal</label>
-            <input id="bilangan" type="text">
-        </form>
-    </div>
-    <div>
-        <p id="hasil_biner">Biner: </p>
-        <p id="hasil_oktal">Oktal: </p>
-        <p id="hasil_desimal">Desimal: </p>
-        <p id="hasil_heksa">Heksa Desimal: </p>
-    </div>
+
+        <nav>
+            <button data-target="beranda">Beranda</button>
+            <button data-target="teori">Teori</button>
+            <button data-target="konverter">Konverter</button>
+            <button data-target="visualisasi">Visualisasi</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="beranda">
+            <h2>Eksplorasi Sistem Bilangan</h2>
+            <p>
+                Website untuk mempelajari dan melakukan konversi
+                sistem bilangan.
+            </p>
+        </section>
+
+        <section id="teori">
+            <h2>Teori Singkat</h2>
+
+            <h3>Biner (Basis 2)</h3>
+            <p>Hanya menggunakan angka 0 dan 1. Ini adalah bahasa dasar yang dipahami komputer,
+                karena tiap digit (bit) mewakili status listrik: mati (0) atau menyala (1).</p>
+            <p>Contoh: 1011<sub>2</sub> = 11<sub>10</sub></p>
+
+            <h3>Oktal (Basis 8)</h3>
+            <p>Menggunakan angka 0–7. Dulu dipakai untuk mempersingkat penulisan biner
+                (3 bit biner = 1 digit oktal), sekarang jarang dipakai tapi tetap muncul di beberapa
+                sistem seperti izin akses file di Linux.</p>
+            <p>Contoh: 17<sub>8</sub> = 15<sub>10</sub></p>
+
+            <h3>Desimal (Basis 10)</h3>
+            <p>Sistem bilangan yang dipakai sehari-hari, menggunakan angka 0–9.
+                Semua konversi di halaman ini pada dasarnya melewati bentuk desimal sebagai perantara.</p>
+            <p>Contoh: 25<sub>10</sub></p>
+
+            <h3>Heksadesimal (Basis 16)</h3>
+            <p>Menggunakan 0–9 dan A–F. Sering dipakai untuk menulis kode warna (misal #FF5733),
+                alamat memori, dan MAC address, karena lebih ringkas daripada biner.</p>
+            <p>Contoh: 1F<sub>16</sub> = 31<sub>10</sub></p>
+        </section>
+
+        <section id="konverter">
+            <h2>Konverter Bilangan</h2>
+
+            <form action="">
+                <input id="biner" type="radio" name="sistem_bilangan" value="biner" checked="checked">
+                <label for="biner">Biner</label>
+
+                <input id="oktal" type="radio" name="sistem_bilangan" value="oktal">
+                <label for="oktal">Oktal</label>
+
+                <input id="desimal" type="radio" name="sistem_bilangan" value="desimal">
+                <label for="desimal">Desimal</label>
+
+                <input id="heksadesimal" type="radio" name="sistem_bilangan" value="heksadesimal">
+                <label for="heksadesimal">Heksa Desimal</label>
+
+                <input id="bilangan" type="text">
+            </form>
+
+            <p id="hasil_biner">Biner: </p>
+            <p id="hasil_oktal">Oktal: </p>
+            <p id="hasil_desimal">Desimal: </p>
+            <p id="hasil_heksa">Heksa Desimal: </p>
+        </section>
+
+        <section id="visualisasi">
+            <h2>Visualisasi Bit</h2>
+
+            <input id="visual-input" type="text" placeholder="Masukkan angka desimal">
+
+            <h3>Susunan Bit</h3>
+            <div id="bit-boxes"></div>
+
+            <h3>Cara Kerja</h3>
+            <div id="cara-kerja"></div>
+        </section>
+
+    </main>
+
     <script src="script.js"></script>
+
 </body>
 </html>
