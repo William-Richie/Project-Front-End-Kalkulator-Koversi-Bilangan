@@ -3,27 +3,28 @@ const teksBiner = document.getElementById('hasil_biner');
 const teksOktal = document.getElementById('hasil_oktal');
 const teksDesimal = document.getElementById('hasil_desimal');
 const teksHeksa = document.getElementById('hasil_heksa');
+const semuaNilai = document.querySelectorAll('input[name="sistem_bilangan"]');
 
-bilangan.addEventListener('input', function(){
+function prosesKonversi() {
     const pilihan = document.querySelector('input[name="sistem_bilangan"]:checked').value;
 
     if (pilihan === 'biner'){
-        this.value = this.value.replace(/[^01]/g, '');
+        bilangan.value = bilangan.value.replace(/[^01]/g, '');
     }
 
     if (pilihan === 'oktal'){
-        this.value = this.value.replace(/[^01234567]/g, '');
+        bilangan.value = bilangan.value.replace(/[^01234567]/g, '');
     }
 
     if (pilihan === 'desimal'){
-        this.value = this.value.replace(/[^0123456789]/g, '');
+        bilangan.value = bilangan.value.replace(/[^0123456789]/g, '');
     }
 
     if (pilihan === 'heksadesimal'){
-        this.value = this.value.replace(/[^0123456789abcdefABCDEF]/g, '');
+        bilangan.value = bilangan.value.replace(/[^0123456789abcdefABCDEF]/g, '');
     }
 
-    if (this.value === ''){
+    if (bilangan.value === ''){
         teksBiner.textContent = "Biner: ";
         teksOktal.textContent = "Oktal: ";
         teksDesimal.textContent = "Desimal: ";
@@ -34,23 +35,28 @@ bilangan.addEventListener('input', function(){
     let nilaiDesimal = 0;
 
     if (pilihan === 'biner'){
-        nilaiDesimal = parseInt(this.value, 2);
+        nilaiDesimal = parseInt(bilangan.value, 2);
     }
 
     if(pilihan === 'oktal'){
-        nilaiDesimal = parseInt(this.value, 8);
+        nilaiDesimal = parseInt(bilangan.value, 8);
     }
 
     if(pilihan === 'desimal'){
-        nilaiDesimal = parseInt(this.value, 10);
+        nilaiDesimal = parseInt(bilangan.value, 10);
     }
 
     if(pilihan === 'heksadesimal'){
-        nilaiDesimal = parseInt(this.value, 16);
+        nilaiDesimal = parseInt(bilangan.value, 16);
     }
 
     teksBiner.textContent = "Biner: " + nilaiDesimal.toString(2);
     teksOktal.textContent = "Oktal: " + nilaiDesimal.toString(8);
     teksDesimal.textContent = "Desimal: " + nilaiDesimal.toString(10);
-    teksHeksa.textContent = "Heksa Desimal: " + nilaiDesimal.toString(16);
+    teksHeksa.textContent = "Heksa Desimal: " + nilaiDesimal.toString(16).toUpperCase(); 
+}
+
+bilangan.addEventListener('input', prosesKonversi);
+semuaNilai.forEach(function(nilai) {
+    nilai.addEventListener('change', prosesKonversi);
 });
