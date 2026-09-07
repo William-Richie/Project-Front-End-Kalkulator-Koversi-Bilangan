@@ -3,6 +3,11 @@
     margin: 0px;
 }
 
+body {
+    font-family: monospace;
+}
+
+/* Header */
 header{
     padding: 70px;
     color: #c4c9d5;
@@ -24,6 +29,7 @@ header h2{
     font-style: italic;
 }
 
+/* Navigasi */
 nav button{
     background-color: #9dafbb;
     color: #191d23;
@@ -49,11 +55,56 @@ nav button.aktif {
     background-color: #8395a2;
 }
 
-body {
-    font-family: monospace;
+/* Beranda */
+#beranda {
+    max-width: 900px;
+    margin: 24px auto 0px;
+    border-radius: 8px;
+}
+
+#beranda h2 {
+    margin-bottom: 4px;
+}
+
+.flexbox {
+    display: flex;
+    gap: 24px;
+}
+
+.kotak1 {
+    text-align: center;
+    padding: 16px;
+    margin: 0px 8px 24px;
+    border-radius: 8px;
+    background-color: #eeeeee17;
+    box-shadow: 0 4px 10px #191d234d;
+    border-width: 2px;
+    border-style: solid;
+}
+
+/* Teori */
+#teori {
+    margin: 24px 8px 0px;
+    padding: 8px;
+    border-radius: 8px;
+    border-width: 2px;
+    border-style: solid;
+}
+
+#teori h3 {
+    margin: 16px 0px 4px;
 }
 
 /* Converter */
+#konversi {
+    max-width: 650px;
+    margin: 36px auto 40px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px #191d234d;
+    text-align: center;
+}
+
 form {
     display: flex;
     flex-wrap: wrap;
@@ -62,6 +113,17 @@ form {
     flex-direction: column;
     gap: 15px;
     margin: 10px auto 30px auto;
+}
+
+#pilih-bilangan {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    box-sizing: border-box;
 }
 
 .opsi {
@@ -82,15 +144,8 @@ form {
     cursor: pointer;
 }
 
-#pilih-bilangan {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 5px;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
-    box-sizing: border-box;
+.opsi input {
+    display: none;
 }
 
 #bilangan {
@@ -105,13 +160,10 @@ form {
     padding: 8px;
 }
 
-.opsi input {
-    display: none;
-}
-
 #hasil {
     display: none;
     flex-direction: column;
+    gap: 15px;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
@@ -172,65 +224,7 @@ form {
     font-style: italic;
 }
 
-#beranda {
-    max-width: 900px;
-    margin: 24px auto 0px;
-    border-radius: 8px;
-}
-
-#teori {
-    margin: 24px 8px 0px;
-    padding: 8px;
-    border-radius: 8px;
-    border-width: 2px;
-    border-style: solid;
-}
-
-
-#teori h3 {
-    margin: 16px 0px 4px;
-}
-
-.kotak1 {
-    text-align: center;
-    padding: 16px;
-    margin: 0px 8px 24px;
-    border-radius: 8px;
-    background-color: #eeeeee17;
-    box-shadow: 0 4px 10px #191d234d;
-    border-width: 2px;
-    border-style: solid;
-}
-
-#beranda h2 {
-    margin-bottom: 4px;
-}
-
-.flexbox {
-    display: flex;
-    gap: 24px;
-}
-
-#konverter {
-    margin: 24px 8px 0px;
-    padding: 8px;
-    border-width: 2px;
-    border-style: solid;
-    border-radius: 8px;
-}
-
-#konverter h2 {
-    margin-bottom: 8px;
-}
-
-#konverter input {
-    margin: 4px 0px 16px;
-}
-
-#konverter p {
-    margin: 16px 0px;
-}
-
+/* Visualisasi */
 #visualisasi {
     max-width: 650px;
     margin: 36px auto 36px;
@@ -239,17 +233,6 @@ form {
     box-shadow: 0 4px 10px #191d234d;
     text-align: center;
 }
-
-#konversi {
-    max-width: 650px;
-    margin: 36px auto 40px;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px #191d234d;
-    text-align: center;
-}
-
-
 
 #visual-input {
     background-color: #dedcdc;
@@ -263,6 +246,21 @@ form {
     padding: 8px;
 }
 
+.flexbox2 {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.bit-box {
+    height: 35px;
+    display: flex;
+    color: #2a3441;
+    font-weight: bold;
+    font-size: 17px;
+}
+
 #bit-boxes {
     display: flex;
     flex-direction: column;
@@ -273,14 +271,6 @@ form {
     box-shadow: 0 4px 10px #191d234d;
     border-width: 2px;
     border-style: solid;
-}
-
-.bit-box {
-    height: 35px;
-    display: flex;
-    color: #2a3441;
-    font-weight: bold;
-    font-size: 17px;
 }
 
 #cara-kerja {
@@ -304,11 +294,4 @@ form {
     font-weight: bold;
     margin-bottom: 0px;
     text-align: justify;
-}
-
-.flexbox2 {
-    display: flex;
-    gap: 32px;
-    justify-content: center;
-    margin-top: 2rem;
 }
