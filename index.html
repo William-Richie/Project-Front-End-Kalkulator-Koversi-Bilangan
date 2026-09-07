@@ -10,7 +10,7 @@
 <body>
     <header>
         <h1>Kalkulator Konversi Bilangan</h1>
-
+        <h2>Bilangan Biner, Oktal, Desimal, dan Heksadesimal</h2>
         <nav>
             <button data-target="beranda">Beranda</button>
             <button data-target="teori">Teori</button>
@@ -21,47 +21,37 @@
 
     <main>
         <section id="beranda">
-            <h2>Eksplorasi Sistem Bilangan</h2>
-            <p>
-                Website untuk mempelajari dan melakukan konversi
-                sistem bilangan.
-            </p>
-            <p>
-                Website untuk mempelajari dan melakukan konversi
-                sistem bilangan.
-            </p>
-            <p>
-                Website untuk mempelajari dan melakukan konversi
-                sistem bilangan.
-            </p>
-            <p>
-                Website untuk mempelajari dan melakukan konversi
-                sistem bilangan.
-            </p>
-            <p>
-                Website untuk mempelajari dan melakukan konversi
-                sistem bilangan.
-            </p>
-            <p>
-                Website untuk mempelajari dan melakukan konversi
-                sistem bilangan.
-            </p>
-            <p>
-                Website untuk mempelajari dan melakukan konversi
-                sistem bilangan.
-            </p>
-            <p>
-                Website untuk mempelajari dan melakukan konversi
-                sistem bilangan.
-            </p>
-            <p>
-                Website untuk mempelajari dan melakukan konversi
-                sistem bilangan.
-            </p>
-            <p>
-                Website untuk mempelajari dan melakukan konversi
-                sistem bilangan.
-            </p>
+            <div class="kotak1">
+                <h2>Eksplorasi Sistem Bilangan</h2>
+                <p>
+                    Komputer memproses data menggunakan sistem bilangan tertentu. Sehingga tujuan utama 
+                    website ini adalah untuk mempelajari, mengonversi, dan memvisualisasikan sistem bilangan 
+                    yang menjadi fondasi utama dalam ilmu komputer.
+                </p>
+            </div>
+
+            <div class="flexbox">
+                <div class="kotak1">
+                    <h2>Memahami Teori</h2>
+                    <p>
+                        Mempelajari konsep dasar bilangan Biner, Oktal, Desimal, dan Heksadesimal.
+                    </p>
+                </div>
+
+                <div class="kotak1">
+                    <h2>Konversi Real-Time</h2>
+                    <p>
+                        Mengubah nilai antar basis bilangan secara otomatis dan akurat.
+                    </p>
+                </div>
+
+                <div class="kotak1">
+                    <h2>Visualisasi Proses</h2>
+                    <p>
+                        Memperlihatkan langkah-langkah untuk mengubah basis bilangan secara benar.
+                    </p>
+                </div>
+            </div>
         </section>
 
         <section id="teori">
@@ -90,9 +80,8 @@
         </section>
 
         <section id="konverter">
-            <h2>Konverter Bilangan</h2>
-
-            <form action="">
+            <form action="" id="konversi" autocomplete="off">
+                <h2>Konverter Bilangan</h2>
                 <div id="pilih-bilangan">
                     <div class="opsi">
                         <input id="biner" type="radio" name="sistem_bilangan" value="biner" checked="checked">
@@ -119,7 +108,9 @@
             </form>
 
             <div id="hasil">
+                <h3>Bilangan</h3>
                 <div id="hasil_sama"></div>
+                <h3>Menghasilkan</h3>
                 <div id="hasil_lain"></div>
             </div>
 
@@ -144,15 +135,6 @@
                     <div id="hasil_heksa" class="nilai_hasil"></div>
                 </div>
             </div>
-
-            <!-- <div id="simpan_hasil">
-                <p id="hasil_biner">Biner: </p>
-                <p id="hasil_oktal">Oktal: </p>
-                <p id="hasil_desimal">Desimal: </p>
-                <p id="hasil_heksa">Heksa Desimal: </p>
-            </div> -->
-
-
         </section>
 
         <section id="visualisasi">
@@ -160,11 +142,17 @@
 
             <input id="visual-input" type="text" placeholder="Masukkan angka desimal">
 
-            <h3>Susunan Bit</h3>
-            <div id="bit-boxes"></div>
+            <div class="flexbox2">
+                <div class="kotak2">
+                    <h3>Susunan Bit</h3>
+                    <div id="bit-boxes"></div>
+                </div>
 
-            <h3>Cara Kerja</h3>
-            <div id="cara-kerja"></div>
+                <div class="kotak2">
+                    <h3>Cara Kerja</h3>
+                    <div id="cara-kerja"></div>
+                </div>
+            </div>
         </section>
 
     </main>

@@ -8,6 +8,11 @@ semuaHalaman.forEach(function(halaman) {
 
 document.getElementById("beranda").style.display = "block";
 
+const tombolAwal = document.querySelector('[data-target="beranda"]');
+if (tombolAwal) {
+    tombolAwal.classList.add("aktif");
+}
+
 tombolNavigasi.forEach(function(tombol) {
     tombol.addEventListener("click", function() {
         const target = tombol.dataset.target;
@@ -17,6 +22,12 @@ tombolNavigasi.forEach(function(tombol) {
         });
 
         document.getElementById(target).style.display = "block";
+
+        tombolNavigasi.forEach(function(btn) {
+            btn.classList.remove("aktif");
+        });
+
+        tombol.classList.add("aktif");
     });
 });
 
@@ -29,6 +40,7 @@ const teksOktal = document.getElementById('hasil_oktal');
 const teksDesimal = document.getElementById('hasil_desimal');
 const teksHeksa = document.getElementById('hasil_heksa');
 const semuaNilai = document.querySelectorAll('input[name="sistem_bilangan"]');
+const hasil = document.getElementById('hasil');
 
 const hasilSama = document.getElementById('hasil_sama');
 const hasilLain = document.getElementById('hasil_lain');
@@ -42,8 +54,21 @@ const teksHasil = {
 if (form) {
     form.addEventListener('submit', function(e) {
         e.preventDefault();
+
+        if (bilangan.value.trim() !== '') {
+            prosesKonversi();
+            hasil.style.display = 'flex';
+
+            setTimeout(() => {
+                hasil.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }, 100);
+        }
     });
 }
+
 
 function inputInteraktif(pilihan) {
     const semuaOpsi = document.querySelectorAll('.opsi');
@@ -55,7 +80,7 @@ function inputInteraktif(pilihan) {
         opsi.style.color = 'black';
     });
 
-    opsiAktif.style.backgroundColor = '#ff7b7b';
+    opsiAktif.style.backgroundColor = '#57707a';
     opsiAktif.style.color = 'white';
 
     hasilSama.innerHTML = '';
@@ -129,6 +154,8 @@ bilangan.addEventListener('input', prosesKonversi);
 
 semuaNilai.forEach(function(nilai) {
     nilai.addEventListener('change', function() {
+        bilangan.value = '';
+
         inputInteraktif(this.value);
         prosesKonversi();
     });
