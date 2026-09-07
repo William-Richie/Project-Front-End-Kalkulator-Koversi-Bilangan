@@ -10,3 +10,121 @@ header{
 body {
     font-family: monospace;
 }
+
+/* Converter */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    gap: 15px;
+    margin: 10px auto 30px auto;
+    font-size: 15px;
+}
+
+.opsi {
+    display: flex;
+    gap: 4px;
+    border: 2px solid black;
+    padding: 10px 5px;
+    justify-content: center;
+    align-items: center;
+    width: 110px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.opsi label {
+    width: 110px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#pilih-bilangan {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+#bilangan {
+    width: 250px;
+    padding: 10px;
+    border: 2.5px solid black;
+    box-sizing: border-box;
+}
+
+.opsi input {
+    display: none;
+}
+
+#hasil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    padding: 15px;
+    margin: 70px auto 0 auto;
+    box-sizing: border-box;
+}
+
+#hasil_sama {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+#hasil_lain {
+    gap: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+
+#simpan_hasil {
+    display: none;
+}
+
+/* #hasil p {
+    padding: 15px;
+    text-align: center;
+    min-width: 100%;
+    border: 2px solid red;
+} */
+
+.kartu_hasil {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 200px;
+}
+
+.label_hasil {
+    border: 2px solid black;
+    padding: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nilai_hasil {
+    border: 2px solid black;
+    padding: 30px;
+    text-align: center;
+    min-height: 20px;
+    word-break: break-all;
+    box-sizing: border-box;
+    font-size: 15px;
+    font-style: italic;
+}

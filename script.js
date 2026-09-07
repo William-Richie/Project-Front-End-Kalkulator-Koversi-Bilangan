@@ -22,6 +22,7 @@ tombolNavigasi.forEach(function(tombol) {
 
 
 // KONVERTER BILANGAN
+const form = document.querySelector('form');
 const bilangan = document.getElementById('bilangan');
 const teksBiner = document.getElementById('hasil_biner');
 const teksOktal = document.getElementById('hasil_oktal');
@@ -29,8 +30,52 @@ const teksDesimal = document.getElementById('hasil_desimal');
 const teksHeksa = document.getElementById('hasil_heksa');
 const semuaNilai = document.querySelectorAll('input[name="sistem_bilangan"]');
 
+const hasilSama = document.getElementById('hasil_sama');
+const hasilLain = document.getElementById('hasil_lain');
+const teksHasil = {
+    'biner': document.getElementById('kotak_biner'),
+    'oktal': document.getElementById('kotak_oktal'),
+    'desimal': document.getElementById('kotak_desimal'),
+    'heksadesimal': document.getElementById('kotak_heksa')
+};
+
+if (form) {
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+    });
+}
+
+function inputInteraktif(pilihan) {
+    const semuaOpsi = document.querySelectorAll('.opsi');
+    const aktif = document.querySelector(`input[value="${pilihan}"]`);
+    const opsiAktif = aktif.parentElement;
+
+    semuaOpsi.forEach(opsi => {
+        opsi.style.backgroundColor = 'transparent';
+        opsi.style.color = 'black';
+    });
+
+    opsiAktif.style.backgroundColor = '#ff7b7b';
+    opsiAktif.style.color = 'white';
+
+    hasilSama.innerHTML = '';
+    hasilLain.innerHTML = '';
+
+    for(let opsi in teksHasil) {
+        if (opsi === pilihan) {
+            hasilSama.appendChild(teksHasil[opsi]);
+        }
+
+        else {
+            hasilLain.appendChild(teksHasil[opsi]);
+        }
+    }
+}
+
 function prosesKonversi() {
     const pilihan = document.querySelector('input[name="sistem_bilangan"]:checked').value;
+
+    inputInteraktif(pilihan);
 
     if (pilihan === 'biner'){
         bilangan.value = bilangan.value.replace(/[^01]/g, '');
@@ -49,10 +94,10 @@ function prosesKonversi() {
     }
 
     if (bilangan.value === ''){
-        teksBiner.textContent = "Biner: ";
-        teksOktal.textContent = "Oktal: ";
-        teksDesimal.textContent = "Desimal: ";
-        teksHeksa.textContent = "Heksa Desimal: ";
+        teksBiner.textContent = "";
+        teksOktal.textContent = "";
+        teksDesimal.textContent = "";
+        teksHeksa.textContent = "";
         return;
     }
 
@@ -74,17 +119,22 @@ function prosesKonversi() {
         nilaiDesimal = parseInt(bilangan.value, 16);
     }
 
-    teksBiner.textContent = "Biner: " + nilaiDesimal.toString(2);
-    teksOktal.textContent = "Oktal: " + nilaiDesimal.toString(8);
-    teksDesimal.textContent = "Desimal: " + nilaiDesimal.toString(10);
-    teksHeksa.textContent = "Heksa Desimal: " + nilaiDesimal.toString(16).toUpperCase();
+    teksBiner.textContent = nilaiDesimal.toString(2);
+    teksOktal.textContent = nilaiDesimal.toString(8);
+    teksDesimal.textContent = nilaiDesimal.toString(10);
+    teksHeksa.textContent = nilaiDesimal.toString(16).toUpperCase();
 }
 
 bilangan.addEventListener('input', prosesKonversi);
 
 semuaNilai.forEach(function(nilai) {
-    nilai.addEventListener('change', prosesKonversi);
+    nilai.addEventListener('change', function() {
+        inputInteraktif(this.value);
+        prosesKonversi();
+    });
 });
+
+prosesKonversi();
 
 
 // VISUALISASI BIT + CARA KERJA
