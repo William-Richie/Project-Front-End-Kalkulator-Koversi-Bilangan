@@ -84,15 +84,62 @@ nav button.aktif {
 
 /* Teori */
 #teori {
-    margin: 24px 8px 0px;
+    max-width: 750px;
+    margin: 24px auto;
     padding: 8px;
+    text-align: center; 
+}
+
+.t-card{
+    max-width: 320px;
+    margin: 25px auto;
     border-radius: 8px;
-    border-width: 2px;
-    border-style: solid;
+    box-shadow: 0 4px 10px #191d234d;
+    border: 2px solid #1f1646;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.t-header {
+    background-color: #57707A;
+    color: #fff;
+    padding: 14px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.t-body {
+    background-color: #d4dbf353;
+    padding: 20px;
+    text-align: center;
+}
+
+.t-grid{
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 5px;
+    justify-content: center;
 }
 
 #teori h3 {
-    margin: 16px 0px 4px;
+    margin: 0px 0px 10px;
+}
+
+#teori p2 {
+    display: inline;
+    color: #cccccc;
+    background-image: linear-gradient(#cccccc, #cccccc);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: right;
+    transition: background-size 1500ms, color 1500ms;
+}
+
+#teori p2:hover{
+    background-size: 0% 100%;
+    color: #000;
 }
 
 /* Converter */
