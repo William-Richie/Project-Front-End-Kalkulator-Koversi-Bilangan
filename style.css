@@ -5,6 +5,9 @@
 
 body {
     font-family: monospace;
+    background: linear-gradient(to bottom, #90a2af, #b5bbc8, #d6c4d6, #eceaea);
+    color: #2a3441;
+    min-height: 700px;
 }
 
 /* Header */
@@ -208,7 +211,7 @@ form {
 }
 
 #hasil {
-    display: none;
+    display: flex;
     flex-direction: column;
     gap: 15px;
     align-items: center;
@@ -246,11 +249,14 @@ form {
     flex-direction: column;
     max-width: 200px;
     min-width: 130px;
-    height: fit-content;
+    min-height: 120px;
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 4px 10px #191d234d;
-    background-color: #7e919f;
+    background-color: #dedcdc;
+    border-width: 2px;
+    border-color: black;
+    border-style: solid;
 }
 
 .label_hasil {
@@ -265,10 +271,12 @@ form {
     padding: 20px;
     text-align: center;
     min-height: 20px;
-    word-break: break-all;
+    word-break: break-word;
+    overflow-wrap: break-word;
     box-sizing: border-box;
     font-size: 15px;
     font-style: italic;
+    white-space: normal;  
 }
 
 /* Visualisasi */

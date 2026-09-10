@@ -54,18 +54,6 @@ const teksHasil = {
 if (form) {
     form.addEventListener('submit', function(e) {
         e.preventDefault();
-
-        if (bilangan.value.trim() !== '') {
-            prosesKonversi();
-            hasil.style.display = 'flex';
-
-            setTimeout(() => {
-                hasil.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }, 100);
-        }
     });
 }
 
