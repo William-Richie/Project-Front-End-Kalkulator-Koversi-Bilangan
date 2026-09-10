@@ -5,6 +5,9 @@
 
 body {
     font-family: monospace;
+    background: linear-gradient(to bottom, #90a2af, #b5bbc8, #d6c4d6, #eceaea);
+    color: #2a3441;
+    min-height: 700px;
 }
 
 /* Header */
@@ -84,62 +87,15 @@ nav button.aktif {
 
 /* Teori */
 #teori {
-    max-width: 750px;
-    margin: 24px auto;
+    margin: 24px 8px 0px;
     padding: 8px;
-    text-align: center; 
-}
-
-.t-card{
-    max-width: 320px;
-    margin: 25px auto;
     border-radius: 8px;
-    box-shadow: 0 4px 10px #191d234d;
-    border: 2px solid #1f1646;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-}
-
-.t-header {
-    background-color: #57707A;
-    color: #fff;
-    padding: 14px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 18px;
-}
-
-.t-body {
-    background-color: #d4dbf353;
-    padding: 20px;
-    text-align: center;
-}
-
-.t-grid{
-    display: flex;
-    flex-wrap: wrap; 
-    gap: 5px;
-    justify-content: center;
+    border-width: 2px;
+    border-style: solid;
 }
 
 #teori h3 {
-    margin: 0px 0px 10px;
-}
-
-#teori p2 {
-    display: inline;
-    color: #cccccc;
-    background-image: linear-gradient(#cccccc, #cccccc);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-position: right;
-    transition: background-size 1500ms, color 1500ms;
-}
-
-#teori p2:hover{
-    background-size: 0% 100%;
-    color: #000;
+    margin: 16px 0px 4px;
 }
 
 /* Converter */
@@ -208,7 +164,7 @@ form {
 }
 
 #hasil {
-    display: none;
+    display: flex;
     flex-direction: column;
     gap: 15px;
     align-items: center;
@@ -250,7 +206,7 @@ form {
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 4px 10px #191d234d;
-    background-color: #7e919f;
+    background-color: #dedcdc;
 }
 
 .label_hasil {
