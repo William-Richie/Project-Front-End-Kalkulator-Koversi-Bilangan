@@ -16,6 +16,7 @@
             <button data-target="teori">Teori</button>
             <button data-target="konverter">Konverter</button>
             <button data-target="visualisasi">Visualisasi</button>
+            <button data-target="kalkulator">Kalkulator</button>
         </nav>
     </header>
 
@@ -178,6 +179,72 @@
                 <div class="kotak2">
                     <h3>Cara Kerja</h3>
                     <div id="cara-kerja"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="kalkulator">
+            <h2>Kalkulator Aritmatika Bilangan</h2>
+            <form>
+                <div>
+                    <p>Pilih Tipe Bilangan:</p>
+                    <div>
+                        <input id="kalku-biner" type="radio" name="basis" value="2" checked>
+                        <label for="kalku-biner">Biner</label>
+                    </div>
+                    <div>
+                        <input id="kalku-oktal" type="radio" name="basis" value="8">
+                        <label for="kalku-oktal">Oktal</label>
+                    </div>
+                    <div>
+                        <input id="kalku-desimal" type="radio" name="basis" value="10">
+                        <label for="kalku-desimal">Desimal</label>
+                    </div>
+                    <div>
+                        <input id="kalku-heksa" type="radio" name="basis" value="16">
+                        <label for="kalku-heksa">Heksa Desimal</label>
+                    </div>
+                </div>
+                
+                <br>
+
+                <div>
+                    <input type="text" placeholder="Bilangan 1" id="angka1">
+                    
+                    <select id="operator">
+                        <option value="+">+</option>
+                        <option value="-">-</option>
+                        <option value="*">x (Kali)</option>
+                        <option value="/">/ (Bagi)</option>
+                    </select>
+                    
+                    <input type="text" placeholder="Bilangan 2" id="angka2">
+                </div>
+            </form>
+
+            <div>
+                <h3>Hasil:</h3>
+                
+                <div>
+                    <div class="kartu_hasil">
+                        <div class="label_hasil">Biner</div>
+                        <div id="kal_hasil_biner" class="nilai_hasil"></div>
+                    </div>
+
+                    <div class="kartu_hasil">
+                        <div class="label_hasil">Oktal</div>
+                        <div id="kal_hasil_oktal" class="nilai_hasil"></div>
+                    </div>
+
+                    <div class="kartu_hasil">
+                        <div class="label_hasil">Desimal</div>
+                        <div id="kal_hasil_desimal" class="nilai_hasil"></div>
+                    </div>
+
+                    <div class="kartu_hasil">
+                        <div class="label_hasil">Heksadesimal</div>
+                        <div id="kal_hasil_heksa" class="nilai_hasil"></div>
+                    </div>
                 </div>
             </div>
         </section>

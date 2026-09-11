@@ -206,3 +206,97 @@ function renderVisualisasi() {
 if (visualInput) {
     visualInput.addEventListener('input', renderVisualisasi);
 }
+
+// Kalkulator
+const radioBasis = document.querySelectorAll('input[name="basis"]');
+const inputAngka1 = document.getElementById('angka1');
+const inputAngka2 = document.getElementById('angka2');
+const selectOperator = document.getElementById('operator');
+
+const kalHasilBiner = document.getElementById('kal_hasil_biner');
+const kalHasilOktal = document.getElementById('kal_hasil_oktal');
+const kalHasilDesimal = document.getElementById('kal_hasil_desimal');
+const kalHasilHeksa = document.getElementById('kal_hasil_heksa');
+
+function setSemuaHasil(teks) {
+    kalHasilBiner.textContent = teks;
+    kalHasilOktal.textContent = teks;
+    kalHasilDesimal.textContent = teks;
+    kalHasilHeksa.textContent = teks;
+}
+
+function filterInput(input, tipe) {
+    if (tipe === '2') {
+        input.value = input.value.replace(/[^01]/g, '');
+    } 
+    else if (tipe === '8') {
+        input.value = input.value.replace(/[^0-7]/g, '');
+    } 
+    else if (tipe === '10') {
+        input.value = input.value.replace(/[^0-9]/g, '');
+    } 
+    else if (tipe === '16') {
+        input.value = input.value.replace(/[^0-9a-fA-F]/g, '');
+    }
+}
+
+function hitung() {
+    const basis = parseInt(document.querySelector('input[name="basis"]:checked').value);
+    const val1 = inputAngka1.value.trim();
+    const val2 = inputAngka2.value.trim();
+    const operator = selectOperator.value;
+
+    if (val1 === '' || val2 === '') {
+        setSemuaHasil('-');
+        return;
+    }
+
+    const desimal1 = parseInt(val1, basis);
+    const desimal2 = parseInt(val2, basis);
+    let hasilDesimal = 0;
+
+    switch (operator) {
+        case '+': hasilDesimal = desimal1 + desimal2; break;
+        case '-': hasilDesimal = desimal1 - desimal2; break;
+        case '*': hasilDesimal = desimal1 * desimal2; break;
+        case '/':
+            if (desimal2 === 0) {
+                setSemuaHasil('Error: Dibagi 0');
+                return;
+            }
+            hasilDesimal = desimal1 / desimal2; 
+            break;
+    }
+
+    function Persamaan(targetBasis) {
+        if (isNaN(hasilDesimal)) return '-';
+        const strAngka1 = desimal1.toString(targetBasis).toUpperCase();
+        const strAngka2 = desimal2.toString(targetBasis).toUpperCase();
+        const strHasil = hasilDesimal.toString(targetBasis).toUpperCase();
+        
+        return `${strAngka1} ${operator} ${strAngka2} = ${strHasil}`;
+    }
+
+    kalHasilBiner.textContent = Persamaan(2);
+    kalHasilOktal.textContent = Persamaan(8);
+    kalHasilDesimal.textContent = Persamaan(10);
+    kalHasilHeksa.textContent = Persamaan(16);
+}
+
+function tanganiInput() {
+    const basisSaatIni = document.querySelector('input[name="basis"]:checked').value;
+    filterInput(this, basisSaatIni);
+    hitung();
+}
+
+inputAngka1.addEventListener('input', tanganiInput);
+inputAngka2.addEventListener('input', tanganiInput);
+selectOperator.addEventListener('change', hitung);
+
+radioBasis.forEach(radio => {
+    radio.addEventListener('change', () => {
+        inputAngka1.value = '';
+        inputAngka2.value = '';
+        setSemuaHasil('-');
+    });
+});
