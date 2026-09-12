@@ -63,13 +63,13 @@ function inputInteraktif(pilihan) {
     const aktif = document.querySelector(`input[value="${pilihan}"]`);
     const opsiAktif = aktif.parentElement;
 
-    semuaOpsi.forEach(opsi => {
-        opsi.style.backgroundColor = 'transparent';
-        opsi.style.color = 'black';
-    });
+    // semuaOpsi.forEach(opsi => {
+    //     opsi.style.backgroundColor = 'transparent';
+    //     opsi.style.color = 'black';
+    // });
 
-    opsiAktif.style.backgroundColor = '#57707a';
-    opsiAktif.style.color = 'white';
+    // opsiAktif.style.backgroundColor = '#57707a';
+    // opsiAktif.style.color = 'white';
 
     hasilSama.innerHTML = '';
     hasilLain.innerHTML = '';
@@ -217,6 +217,12 @@ const kalHasilBiner = document.getElementById('kal_hasil_biner');
 const kalHasilOktal = document.getElementById('kal_hasil_oktal');
 const kalHasilDesimal = document.getElementById('kal_hasil_desimal');
 const kalHasilHeksa = document.getElementById('kal_hasil_heksa');
+
+const targetKotakHasil = document.getElementById('hasil_lain_kalkulator');
+const daftarKartu = document.querySelectorAll('#simpan_hasil_kalkulator .kartu_hasil_kalkulator');
+daftarKartu.forEach(kartu => {
+    targetKotakHasil.appendChild(kartu);
+});
 
 function setSemuaHasil(teks) {
     kalHasilBiner.textContent = teks;
