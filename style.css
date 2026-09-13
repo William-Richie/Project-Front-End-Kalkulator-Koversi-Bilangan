@@ -207,13 +207,6 @@ form {
     box-sizing: border-box;
 }
 
-.opsi:has(input[type="radio"]:checked) {
-    background-color: teal; 
-    border-color: teal;
-    border: 2px solid black;
-    color: white;
-}
-
 .opsi {
     display: flex;
     gap: 4px;
@@ -411,13 +404,6 @@ form {
     
 }
 
-.opsi-kalkulator:has(input[type="radio"]:checked) {
-    background-color: teal; 
-    border-color: teal;
-    border: 2px solid black;
-    color: white;
-}
-
 .opsi-kalkulator {
     display: flex;
     gap: 4px;
@@ -464,6 +450,10 @@ form {
     width: 40px;
     cursor: pointer;
     margin-top: 0;
+}
+
+#simpan_hasil_kalkulator {
+    display: none;
 }
 
 #hasil_kalkulator {
