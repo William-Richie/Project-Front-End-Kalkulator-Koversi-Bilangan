@@ -31,7 +31,6 @@ tombolNavigasi.forEach(function(tombol) {
     });
 });
 
-
 // KONVERTER BILANGAN
 const form = document.querySelector('form');
 const bilangan = document.getElementById('bilangan');
