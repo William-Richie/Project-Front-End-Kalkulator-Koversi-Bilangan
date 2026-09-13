@@ -62,13 +62,13 @@ function inputInteraktif(pilihan) {
     const aktif = document.querySelector(`input[value="${pilihan}"]`);
     const opsiAktif = aktif.parentElement;
 
-    // semuaOpsi.forEach(opsi => {
-    //     opsi.style.backgroundColor = 'transparent';
-    //     opsi.style.color = 'black';
-    // });
+    semuaOpsi.forEach(opsi => {
+        opsi.style.backgroundColor = 'transparent';
+        opsi.style.color = 'black';
+    });
 
-    // opsiAktif.style.backgroundColor = '#57707a';
-    // opsiAktif.style.color = 'white';
+    opsiAktif.style.backgroundColor = '#57707a';
+    opsiAktif.style.color = 'white';
 
     hasilSama.innerHTML = '';
     hasilLain.innerHTML = '';
@@ -223,6 +223,18 @@ daftarKartu.forEach(kartu => {
     targetKotakHasil.appendChild(kartu);
 });
 
+function inputWarna (radio) {
+    const semuaOpsi = document.querySelectorAll('.opsi-kalkulator');
+
+    semuaOpsi.forEach (opsi => {
+        opsi.style.backgroundColor = 'transparent';
+        opsi.style.color = 'black';
+    });
+
+    radio.parentElement.style.backgroundColor = '#57707a';
+    radio.parentElement.style.color = 'white';
+}
+
 function setSemuaHasil(teks) {
     kalHasilBiner.textContent = teks;
     kalHasilOktal.textContent = teks;
@@ -302,6 +314,7 @@ radioBasis.forEach(radio => {
     radio.addEventListener('change', () => {
         inputAngka1.value = '';
         inputAngka2.value = '';
+        inputWarna(radio);
         setSemuaHasil('-');
     });
 });
